@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pic Game</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <main>
+      <div class="one-pic">
+        <img src="/image/pic-4.avif" id="one" alt="" />
+        <div class="cover">?</div>
+      </div>
+
+      <div class="many-pic">
+        <img src="/image/pic-1.avif" class="many" alt="" />
+        <img src="/image/pic-11.avif" class="many" alt="" />
+        <img src="/image/pic-2.avif" class="many" alt="" />
+        <img src="/image/pic-10.avif" class="many" alt="" />
+        <img src="/image/pic-5.avif" class="many" alt="" />
+        <img src="/image/pic-4.avif" class="many" alt="" />
+        <img src="/image/pic-6.avif" class="many" alt="" />
+        <img src="/image/pic-7.avif" class="many" alt="" />
+        <img src="/image/pic-9.avif" class="many" alt="" />
+        <img src="/image/pic-3.avif" class="many" alt="" />
+      </div>
+    </main>
+
+    <div class="overlay hide"></div>
+    <div class="hide result">
+      <p class="win-lose">YOU WON THE GAME</p>
+      <button id="play-again">play again</button>
+    </div>
+    <p class="correct hide">CORRECT✔</p>
+    <div class="extra">
+      <p>chances: <span class="chances">4</span></p>
+      <p>correct: <span class="count-win">0</span></p>
+    </div>
+
+    <script src="smooth.js"></script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

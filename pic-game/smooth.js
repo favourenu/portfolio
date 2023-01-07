@@ -8,6 +8,9 @@ const winCount = document.querySelector(".count-win");
 const winLose = document.querySelector(".win-lose");
 const playAgainbtn = document.querySelector("#play-again");
 
+const randyNum = Math.floor(Math.random() * 10) + 1;
+onePic.src = `pic-${randyNum}.avif`;
+
 const correctPic = () => {
   overlay.classList.remove("hide");
   correct.classList.remove("hide");
@@ -34,11 +37,13 @@ for (let i = 0; i < 10; i++) {
       correctPic();
       multiPic;
       countNum++;
+      winCount.style.color = "green";
       console.log(countNum);
       document.querySelector(".cover").classList.add("hide");
     } else {
       chances.textContent = chancesNum - 1;
       chancesNum--;
+      chances.style.color = "red";
     }
     if (chancesNum === 0) {
       gameWin();
@@ -68,4 +73,6 @@ playAgainbtn.addEventListener("click", () => {
   chancesNum = 7;
   chances.textContent = chancesNum;
   document.querySelector(".cover").classList.remove("hide");
+  chances.style.color = "black";
+  winCount.style.color = "black";
 });

@@ -55,14 +55,14 @@ for (let i = 0; i < 10; i++) {
 correct.addEventListener("click", () => {
   exit();
   const rand = Math.floor(Math.random() * 10) + 1;
-  onePic.src = `/image/pic-${rand}.avif`;
+  onePic.src = `pic-${rand}.avif`;
   document.querySelector(".cover").classList.remove("hide");
 });
 
 playAgainbtn.addEventListener("click", () => {
   exit();
   const randMath = Math.floor(Math.random() * 10) + 1;
-  onePic.src = `/image/pic-${randMath}.avif`;
+  onePic.src = `pic-${randMath}.avif`;
   countNum = 0;
   winCount.textContent = countNum;
   chancesNum = 7;

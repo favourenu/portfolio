@@ -41,8 +41,9 @@ for (let i = 0; i < 10; i++) {
       console.log(countNum);
       document.querySelector(".cover").classList.add("hide");
     } else {
-      chances.textContent = chancesNum - 1;
       chancesNum--;
+      chances.textContent = chancesNum - 1;
+
       chances.style.color = "red";
     }
     if (chancesNum === 0) {
@@ -70,8 +71,9 @@ playAgainbtn.addEventListener("click", () => {
   onePic.src = `pic-${randMath}.avif`;
   countNum = 0;
   winCount.textContent = countNum;
-  chancesNum = 10;
+
   chances.textContent = chancesNum;
+  chancesNum = 10;
   document.querySelector(".cover").classList.remove("hide");
   chances.style.color = "black";
   winCount.style.color = "black";

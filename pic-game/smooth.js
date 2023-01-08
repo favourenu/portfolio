@@ -62,7 +62,7 @@ correct.addEventListener("click", () => {
   exit();
   const rand = Math.floor(Math.random() * 10) + 1;
   onePic.src = `pic-${rand}.avif`;
-  document.querySelector(".cover").classList.remove("hide");
+  // document.querySelector(".cover").classList.remove("hide");
 });
 
 playAgainbtn.addEventListener("click", () => {
@@ -74,7 +74,7 @@ playAgainbtn.addEventListener("click", () => {
 
   chances.textContent = chancesNum;
   chancesNum = 10;
-  document.querySelector(".cover").classList.remove("hide");
+  // document.querySelector(".cover").classList.remove("hide");
   chances.style.color = "black";
   winCount.style.color = "black";
 });

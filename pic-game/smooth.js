@@ -27,7 +27,7 @@ const exit = () => {
   resultEl.classList.add("hide");
 };
 
-let chancesNum = 7;
+let chancesNum = 10;
 let countNum = 0;
 
 for (let i = 0; i < 10; i++) {
@@ -70,7 +70,7 @@ playAgainbtn.addEventListener("click", () => {
   onePic.src = `pic-${randMath}.avif`;
   countNum = 0;
   winCount.textContent = countNum;
-  chancesNum = 7;
+  chancesNum = 10;
   chances.textContent = chancesNum;
   document.querySelector(".cover").classList.remove("hide");
   chances.style.color = "black";

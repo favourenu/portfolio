@@ -98,8 +98,8 @@ p {
 
 .correct {
   position: absolute;
-  top: 20rem;
-  left: 20rem;
+  top: 45%;
+  left: 30%;
   background-color: #fff;
   font-size: 3rem;
   font-weight: 800;

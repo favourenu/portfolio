@@ -42,7 +42,7 @@ for (let i = 0; i < 10; i++) {
       document.querySelector(".cover").classList.add("hide");
     } else {
       chancesNum--;
-      chances.textContent = chancesNum - 1;
+      chances.textContent = chancesNum;
 
       chances.style.color = "red";
     }
@@ -54,6 +54,9 @@ for (let i = 0; i < 10; i++) {
     }
     if (countNum === 3) {
       gameWin();
+      winLose.textContent = " YOU WON THE GAME🎉";
+      resultEl.style.backgroundColor = "green";
+      winLose.style.color = "#fff";
     }
   });
 }

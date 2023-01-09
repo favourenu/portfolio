@@ -21,11 +21,12 @@ body {
 }
 
 main {
+  position: relative;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 50%;
-  border: 5px solid;
+  border: 5px solid black;
   padding: 5rem;
 }
 
@@ -71,16 +72,16 @@ main {
 
 .overlay {
   position: absolute;
-  top: 8rem;
-  right: 44rem;
-  width: 43%;
-  height: 75%;
-  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .result {
   position: absolute;
-  left: 40rem;
+  top: 20rem;
   background-color: rgb(43, 222, 159);
   font-size: 3rem;
   font-weight: 700;
@@ -97,7 +98,8 @@ p {
 
 .correct {
   position: absolute;
-  left: 45rem;
+  top: 20rem;
+  left: 20rem;
   background-color: #fff;
   font-size: 3rem;
   font-weight: 800;
@@ -119,6 +121,16 @@ p {
   font-size: 2rem;
   font-weight: 800;
   margin: 1rem;
+}
+/* .show {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+} */
+
+.hint {
+  cursor: pointer;
 }
 
 .hide {

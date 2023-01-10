@@ -7,10 +7,21 @@ const chances = document.querySelector(".chances");
 const winCount = document.querySelector(".count-win");
 const winLose = document.querySelector(".win-lose");
 const playAgainbtn = document.querySelector("#play-again");
+const showPic = document.querySelector(".show");
+const main = document.querySelector("main");
+const mannual = document.querySelector(".mannual");
+const closeMannual = document.querySelector(".close-man");
 
-const randyNum = Math.floor(Math.random() * 10) + 1;
-onePic.src = `pic-${randyNum}.avif`;
+mannual.addEventListener("click", () => {
+  document.querySelector(".man-con").classList.remove("hide");
+});
 
+closeMannual.addEventListener("click", () => {
+  document.querySelector(".man-con").classList.add("hide");
+});
+
+const randy = Math.trunc(Math.random() * 10) + 1;
+onePic.src = `pic-${randy}.avif`;
 const correctPic = () => {
   overlay.classList.remove("hide");
   correct.classList.remove("hide");
@@ -41,31 +52,45 @@ for (let i = 0; i < 10; i++) {
       console.log(countNum);
       document.querySelector(".cover").classList.add("hide");
     } else {
+      chances.textContent = chancesNum - 1;
       chancesNum--;
-      chances.textContent = chancesNum;
-
       chances.style.color = "red";
     }
     if (chancesNum === 0) {
       gameWin();
-      winLose.textContent = " GAME OVER😖";
+      winLose.textContent = "YOU LOST THE GAME😖";
       resultEl.style.backgroundColor = "red";
       winLose.style.color = "#fff";
+      main.style.borderColor = "red";
     }
     if (countNum === 3) {
       gameWin();
       winLose.textContent = " YOU WON THE GAME🎉";
       resultEl.style.backgroundColor = "green";
       winLose.style.color = "#fff";
+      main.style.borderColor = "green";
     }
   });
 }
+const showNum = document.querySelector(".show-num");
+let playing = true;
+let show = 1;
+showNum.textContent = show;
+showPic.addEventListener("click", () => {
+  if (playing && show === 1) {
+    document.querySelector(".cover").classList.add("hide");
+    show = 0;
+    showNum.textContent = show;
+  } else {
+    playing = false;
+  }
+});
 
 correct.addEventListener("click", () => {
   exit();
   const rand = Math.floor(Math.random() * 10) + 1;
   onePic.src = `pic-${rand}.avif`;
-  // document.querySelector(".cover").classList.remove("hide");
+  document.querySelector(".cover").classList.remove("hide");
 });
 
 playAgainbtn.addEventListener("click", () => {
@@ -74,10 +99,12 @@ playAgainbtn.addEventListener("click", () => {
   onePic.src = `pic-${randMath}.avif`;
   countNum = 0;
   winCount.textContent = countNum;
-
-  chances.textContent = chancesNum;
   chancesNum = 10;
-  // document.querySelector(".cover").classList.remove("hide");
+  chances.textContent = chancesNum;
+  document.querySelector(".cover").classList.remove("hide");
   chances.style.color = "black";
   winCount.style.color = "black";
+  main.style.borderColor = "black";
+  show = 1;
+  showNum.textContent = 1;
 });

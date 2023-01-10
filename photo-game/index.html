@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pic Game</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <nav>
+      <button class="mannual">Click here to learn how to play</button>
+      <div class="man-con hide">
+        <button class="close-man">&#10006</button>
+        <ul class="how-tos">
+          <h2>How to play</h2>
+
+          <li>Under the black box is a photo</li>
+          <li>Guess which one is it from the list of those photos</li>
+          <li>Click your guess to find out if you correct or wrong</li>
+          <li>if you're wrong, your chances(game life) reduce</li>
+          <li>
+            And if your guess is correct, you get a pop up that says correct,
+            click the correct to continue the game because you can only win if
+            you guess 3 correctly
+          </li>
+
+          <li>
+            And there's a show button that helps you see what under the black
+            box, but you can only use it once in the game.
+          </li>
+          <p>Good luck!</p>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="one-pic">
+        <img src="/image/pic-4.avif" id="one" alt="" />
+        <div class="cover">?</div>
+      </div>
+
+      <div class="many-pic">
+        <img src="pic-1.avif" class="many" alt="" />
+        <img src="pic-8.avif" class="many" alt="" />
+        <img src="pic-2.avif" class="many" alt="" />
+        <img src="pic-10.avif" class="many" alt="" />
+        <img src="pic-5.avif" class="many" alt="" />
+        <img src="pic-4.avif" class="many" alt="" />
+        <img src="pic-6.avif" class="many" alt="" />
+        <img src="pic-7.avif" class="many" alt="" />
+        <img src="pic-9.avif" class="many" alt="" />
+        <img src="pic-3.avif" class="many" alt="" />
+      </div>
+    </main>
+
+    <div class="overlay hide"></div>
+    <div class="hide result">
+      <p class="win-lose">YOU WON THE GAME</p>
+      <button id="play-again">play again</button>
+    </div>
+    <p class="correct hide">CORRECT✔</p>
+    <div class="extra">
+      <button class="show">Show: <span class="show-num">1</span></button>
+      <p>Chances: <span class="chances">10</span></p>
+      <p class="cor">Correct: <span class="count-win">0</span></p>
+    </div>
+
+    <script src="smooth.js"></script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

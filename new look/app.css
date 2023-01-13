@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  padding: 1rem;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -22,7 +23,7 @@ body {
 .container {
   width: 70%;
   height: 75vh;
-  border: 5px solid red;
+  border: 2px solid red;
   padding: 2rem;
   position: relative;
 }
@@ -87,6 +88,7 @@ body {
   justify-content: space-between;
   margin: 1rem;
   font-size: 2.5rem;
+  align-items: center;
 }
 
 #show-btn {
@@ -102,7 +104,12 @@ body {
   cursor: pointer;
 }
 
-.correct {
+/* #correct,
+#chances {
+  margin-top: 1rem;
+} */
+
+.correct-pop {
   background-color: rgb(255, 255, 255);
   color: rgb(36, 200, 36);
   position: absolute;
@@ -142,7 +149,7 @@ body {
   .container {
     width: 100%;
     height: 70vh;
-    border: 5px solid red;
+
     padding: 1rem;
   }
   .many-images {
@@ -152,7 +159,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.75rem;
   }
   #show-btn {
     padding: 0 0.75rem;

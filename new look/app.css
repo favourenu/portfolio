@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: burlywood;
+}
+
+.container {
+  width: 70%;
+  height: 75vh;
+  border: 5px solid red;
+  padding: 2rem;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.images-con {
+  display: flex;
+  /* gap: 1rem; */
+}
+
+.one-image {
+  position: relative;
+  height: 60.4vh;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.one {
+  width: 100%;
+  height: 100%;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+.many-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  gap: 3px;
+}
+
+.imgs {
+  width: 30%;
+  height: 19.9vh;
+}
+
+.dis {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+#show-btn {
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background: none;
+}
+#show-btn:hover {
+  color: white;
+  font-weight: 600;
+  background-color: blue;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: rgb(255, 255, 255);
+  color: rgb(36, 200, 36);
+  position: absolute;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  border-radius: 1rem;
+}
+
+.result {
+  background-color: rgb(36, 200, 36);
+  color: rgb(255, 255, 255);
+  position: absolute;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#play-again {
+  font-size: 1.75rem;
+  padding: 0.5rem 0;
+  background-color: rgb(94, 94, 242);
+  color: white;
+  border-radius: 1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 630px) {
+  .dis {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+  #show-btn {
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    background: none;
+  }
+  #show-btn:hover {
+    color: white;
+    font-weight: 500;
+    background-color: blue;
+    font-size: 1.75rem;
+    cursor: pointer;
+  }
+
+  .result {
+    font-size: 1.75rem;
+  }
+
+  #play-again {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+    background-color: rgb(94, 94, 242);
+    color: white;
+    border-radius: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+}

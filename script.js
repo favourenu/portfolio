@@ -1,6 +1,3 @@
-const howToPlayBtn = document.querySelector('.how-btn');
-const closeHowBtn = document.querySelector('.close-how');
-
 const images = document.querySelectorAll('.imgs');
 const onePic = document.querySelector('.one');
 const correctPop = document.querySelector('.correct-pop');
@@ -15,15 +12,6 @@ const overlay = document.querySelector('.overlay');
 const playAgainBtn = document.querySelector('#play-again');
 const showBtn = document.querySelector('#show-btn');
 const showNum = document.querySelector('.show-num');
-
-howToPlayBtn.addEventListener('click', () => {
-  document.querySelector('.how').classList.remove('hidden');
-  howToPlayBtn.classList.add('hidden');
-});
-closeHowBtn.addEventListener('click', () => {
-  document.querySelector('.how').classList.add('hidden');
-  howToPlayBtn.classList.remove('hidden');
-});
 
 const rand = Math.floor(Math.random() * 9) + 1;
 onePic.src = `pic-${rand}.avif`;

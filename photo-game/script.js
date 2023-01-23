@@ -1,117 +1,49 @@
-const howToPlayBtn = document.querySelector('.how-btn');
-const closeHowBtn = document.querySelector('.close-how');
+const rand = Math.trunc(Math.random() * 9) + 1;
+const manyP = document.querySelectorAll(".many");
+const overlay = document.querySelector(".overlay");
+const result = document.querySelector(".result");
+const playAgain = document.querySelector("#play-again");
+const one = document.querySelector("#one");
+const chances = document.querySelector(".chances");
+const winLose = document.querySelector(".win-lose");
 
-const images = document.querySelectorAll('.imgs');
-const onePic = document.querySelector('.one');
-const correctPop = document.querySelector('.correct-pop');
-const coverBox = document.querySelector('.cover');
+one.src = `/image/pic-${rand}.avif`;
 
-const correctNum = document.querySelector('.correct-num');
-const resultEl = document.querySelector('.result');
-const winLose = document.querySelector('.win-lose');
-const chancesNum = document.querySelector('.chances-num');
+const gameWon = () => {
+  overlay.classList.remove("hide");
+  result.classList.remove("hide");
+};
 
-const overlay = document.querySelector('.overlay');
-const playAgainBtn = document.querySelector('#play-again');
-const showBtn = document.querySelector('#show-btn');
-const showNum = document.querySelector('.show-num');
+let num = 4;
 
-howToPlayBtn.addEventListener('click', () => {
-  document.querySelector('.how').classList.remove('hidden');
-  howToPlayBtn.classList.add('hidden');
-});
-closeHowBtn.addEventListener('click', () => {
-  document.querySelector('.how').classList.add('hidden');
-  howToPlayBtn.classList.remove('hidden');
-});
-
-const rand = Math.floor(Math.random() * 9) + 1;
-onePic.src = `pic-${rand}.avif`;
-
-let correctVar = 0;
-let chancesVar = 10;
-let showVarNum = 1;
-let playing = true;
-
-for (let i = 0; i < 9; i++) {
-  images[i].addEventListener('click', () => {
-    if (images[i].src === onePic.src) {
-      correctPop.classList.remove('hidden');
-      coverBox.classList.add('hidden');
-      document.querySelector('.container').style.borderColor = 'green';
-
-      correctVar++;
-      correctNum.textContent = correctVar;
-      correctNum.style.color = 'green';
-      // setTimeout(() => {
-      //   coverBox.classList.add('hidden');
-      // }, 1500);
-
-      if (correctVar === 3) {
-        resultEl.classList.remove('hidden');
-        overlay.classList.remove('hidden');
-
-        coverBox.classList.add('hidden');
-        correctPop.classList.add('hidden');
-
-        winLose.textContent = `YOU WON THE GAME 🏆`;
-        resultEl.style.backgroundColor = 'green';
-      }
-
-      setTimeout(() => {
-        correctPop.classList.add('hidden');
-        coverBox.classList.remove('hidden');
-        const rand = Math.floor(Math.random() * 9) + 1;
-        onePic.src = `pic-${rand}.avif`;
-        document.querySelector('.container').style.borderColor = 'black';
-      }, 1000);
+for (let i = 0; i < 10; i++) {
+  manyP[i].addEventListener("click", () => {
+    const one = document.querySelector("#one");
+    const randMath = Math.trunc(Math.random() * 9) + 1;
+    manyP.src = `/image/pic-${randMath}.avif`;
+    if (manyP[i].src === one.src) {
+      console.log("We are Almost there");
+      gameWon();
     } else {
-      chancesVar--;
-      chancesNum.textContent = chancesVar;
-      chancesNum.style.color = 'red';
-      document.querySelector('.container').style.borderColor = 'red';
-      setTimeout(() => {
-        document.querySelector('.container').style.borderColor = 'black';
-      }, 500);
-      if (chancesVar === 0) {
-        winLose.textContent = `YOU LOST THE GAME😖`;
-
-        resultEl.classList.remove('hidden');
-        resultEl.style.backgroundColor = 'red';
-
-        overlay.classList.remove('hidden');
-        coverBox.classList.add('hidden');
+      console.log("thats not the one");
+      num--;
+      chances.textContent = num;
+      if (num === 0) {
+        winLose.textContent = "YOU LOST THE GAME 😖";
+        result.style.backgroundColor = "red";
+        gameWon();
       }
     }
   });
 }
 
-playAgainBtn.addEventListener('click', () => {
-  resultEl.classList.add('hidden');
-  overlay.classList.add('hidden');
-  coverBox.classList.remove('hidden');
-
-  correctVar = 0;
-  chancesVar = 10;
-  showVarNum = 1;
-
-  showNum.textContent = showVarNum;
-  correctNum.textContent = correctVar;
-  chancesNum.textContent = chancesVar;
-
-  chancesNum.style.color = 'black';
-  correctNum.style.color = 'black';
-
-  const rand = Math.floor(Math.random() * 9) + 1;
-  onePic.src = `pic-${rand}.avif`;
-});
-
-showBtn.addEventListener('click', () => {
-  if (playing && showVarNum === 1) {
-    coverBox.classList.add('hidden');
-    showVarNum = 0;
-    showNum.textContent = showVarNum;
-  } else {
-    playing = false;
-  }
-});
+for (let i = 0; i < 9; i++) {
+  playAgain.addEventListener("click", () => {
+    const randnum = Math.trunc(Math.random() * 9) + 1;
+    one.src = `/image/pic-${randnum}.avif`;
+    overlay.classList.add("hide");
+    result.classList.add("hide");
+    num = 4;
+    chances.textContent = num;
+  });
+}
